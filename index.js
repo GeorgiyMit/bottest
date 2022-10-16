@@ -1,6 +1,6 @@
 const TelegramApi = require('node-telegram-bot-api')
 const {gameOptions, againOptions} = require('./options')
-const token = '5445031249:AAEPtlcoWMOx4kn1Gc04tmCz4tqUvwzJ0fg'
+const token = 
 
 const bot = new TelegramApi(token, {polling: true})
 
@@ -47,7 +47,7 @@ const start =()=>{
         if(data === '/again'){
             return startGame(chatId);
         }
-        if(data === chats[chatId]){
+        if(data == chats[chatId]){
           await  bot.sendSticker(chatId,'https://tlgrm.ru/_/stickers/5ba/fb7/5bafb75c-6bee-39e0-a4f3-a23e523feded/192/25.webp')
             return bot.sendMessage(chatId,`Поздравляю, ты отгадал цифру ${chats[chatId]}`,againOptions)
         }else{
